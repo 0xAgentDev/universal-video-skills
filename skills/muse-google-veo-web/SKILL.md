@@ -29,8 +29,10 @@ model-neutral, and this is where the Flow particulars live.
    takes reference images; attach them on every generation.
 4. **Write the prompts** (`references/veo-prompting.md`). Five-part Veo
    formula: Cinematography, Subject, Action, Context, Style & Ambiance,
-   plus Preserve/Avoid slots. Locked descriptions get pasted verbatim,
-   never paraphrased.
+   plus Preserve/Avoid slots. For text-to-video, paste locked descriptions
+   verbatim, never paraphrased. For Ingredients-to-Video, attach the reference
+   and describe only the shot and motion; do not restate what the image
+   already shows (repetition invites drift).
 5. **Generate in the browser** (`references/browser-ops.md`). Queue clips
    sequentially in one session. Renders take a long time; a full batch
    runs for hours in the background, which is normal.
@@ -43,9 +45,10 @@ model-neutral, and this is where the Flow particulars live.
 
 ## Rules that don't bend
 
-- **Reference images on every generation.** No ingredients, no
-  consistency. The model does not remember across clips; you reattach
-  every time.
+- **Reference images on every Ingredients-to-Video generation.** No
+  ingredients, no consistency. The model does not remember across clips;
+  you reattach every time. Pure text-to-video one-offs with no continuity
+  burden are exempt.
 - **Full-duration verification.** An 8-second clip is 8 seconds of chances
   to break. Check frames across all of it before it touches the timeline.
 - **One clip per beat.** Looping a few clips across minutes reads as cheap

@@ -57,6 +57,7 @@ Install all nine for the full pipeline, or take what you need:
 | Stitch clips and export | `assembly-and-delivery` |
 | Target a specific generator | `model-adapters` |
 | Review clips before shipping | `video-qa` |
+| Generate video with Veo on the web | `muse-google-veo-web` |
 
 Each skill is self-contained: its `SKILL.md` routes to its own references,
 and cross-skill links are relative, so installing a subset never breaks.

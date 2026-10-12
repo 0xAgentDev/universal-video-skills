@@ -41,7 +41,7 @@ A product spot, one 8-second clip:
 - For Ingredients-to-Video, describe only the motion and the shot. Do not
   redescribe the reference image; the image already says what the subject
   looks like, and restating it invites drift. (The full principle is in
-  `video-prompt-craft/references/i2v-prompting.md`.)
+  `../../video-prompt-craft/references/i2v-prompting.md`.)
 - Keep on-screen text out of prompts. Veo renders text unreliably; plan
   to composite titles and signage in post.
 - If a clip needs dialogue, specify speaker, line, and language

@@ -40,6 +40,11 @@ timeline. The first frame is a thumbnail; the clip is eight seconds.
 6. **Log the verdict** per clip: ship, regenerate (with the attempt
    count), or cut. The next session should know what happened without
    re-watching everything.
+7. **Watch it end to end, with sound.** Frame samples catch spatial
+   defects; only a full watch catches temporal ones (flicker, pulsing,
+   morphing between samples) and audio problems. No clip ships unwatched.
+   This mirrors the `video-qa` layered gates: cheap checks first, the
+   expensive full watch last.
 
 ## Assembly gate
 

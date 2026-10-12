@@ -5,8 +5,11 @@ change; verify against Google's current docs before budgeting a project._
 
 ## What you need
 
-- A Google account with an AI Pro subscription. Veo access in Flow is
-  subscription-gated; the free tier does not generate video.
+- A Google account. Flow gives every account a small daily credit
+  allowance (no rollover) that covers trying the service, including some
+  video generation. A Pro subscription adds a monthly credit pool sized
+  for real batch production. Allowances and availability vary by region;
+  check Flow's credit guide for your account before planning.
 - A desktop browser signed into that account. Flow is a web app; there is
   no supported API path in this skill.
 
@@ -17,7 +20,7 @@ change; verify against Google's current docs before budgeting a project._
 - **One Google account for the whole job.** Assets and credit counts follow
   the account. Switching accounts mid-project splits everything and wastes
   time re-uploading ingredients.
-- **Know the credit allowance before planning.** Your subscription includes
+- **Know the credit allowance before planning.** A subscription adds
   a monthly credit pool; each clip spends from it. Count planned clips
   times cost-per-clip before you start, and hold back a 20-30%
   regeneration buffer. Some clips will fail QA; that is the normal case,
