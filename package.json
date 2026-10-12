@@ -1,6 +1,6 @@
 {
     "author": "Smarty <https://github.com/svenkatreddy>",
-    "description": "Vendor-neutral AI video generation skills for coding agents: prompt craft, cinematic direction, story planning, character consistency, audio, assembly, per-model adapters, and QA. Works with Muse, Claude, Grok, Gemini, and any Agent Skills-compatible client.",
+    "description": "Vendor-neutral AI video generation skills for coding agents : prompt craft, cinematic direction, story planning, character consistency, audio, assembly, per-model adapters, and QA. Works with Muse, Claude, Grok, Gemini, and any Agent Skills-compatible client.",
     "engines": {
         "node": ">=18"
     },
