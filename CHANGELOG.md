@@ -29,6 +29,11 @@ Plus worked examples, per-agent install docs, and an honest-limits page.
   `video-qa/scripts/identity_score.py`: CLIP-embedding frame scoring vs.
   a reference image, with mandatory per-project calibration
   (after capy-video-gen-skill, MIT)
+- New skill `muse-google-veo-web`: end-to-end Veo production through
+  Google Flow on the web (AI Pro subscription): project setup and credit
+  budgeting, five-part Veo prompting, browser ops, full-duration QA,
+  stitching. Written from a real production workflow, generalized for any
+  use case.
 
 ### Honest-review fixes (still 0.1.0, pre-publish)
 

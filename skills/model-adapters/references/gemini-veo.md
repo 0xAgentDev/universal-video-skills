@@ -40,3 +40,9 @@ instruction-following, native dialogue, and structured prompts.
   placement matters for sync.
 - Keep the Preserve slot explicit; Veo follows "hold this constant"
   instructions well.
+
+## The web workflow
+
+For the full browser-based loop (Flow project setup, credit budgeting,
+Ingredients-to-Video, browser ops, full-duration QA), use the
+`muse-google-veo-web` skill: `../../muse-google-veo-web/`.

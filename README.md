@@ -1,9 +1,10 @@
 # Universal Video Skills
 
-A skill pack for AI agents that make video. Eight skills covering the whole
+A skill pack for AI agents that make video. Nine skills covering the whole
 job: writing prompts, directing the camera, planning multi-shot stories,
 keeping faces consistent, handling dialogue and audio, stitching the final
-cut, and checking the result before it ships.
+cut, checking the result before it ships, and an end-to-end Veo web
+workflow for when Google's Flow is the backend.
 
 The one thing it refuses to do: lock you into a single video model. Write
 the prompt once, then translate it for whichever generator you're using
@@ -26,7 +27,7 @@ continuity discipline, the review gates, the assembly scripts were all rewritten
 from scratch, in plain English, with the model-specific bits isolated in
 adapter sheets that are dated and honest about going stale.
 
-## The eight skills
+## The nine skills
 
 | Skill | What it does |
 |---|---|
@@ -38,9 +39,10 @@ adapter sheets that are dated and honest about going stale.
 | `assembly-and-delivery` | ffmpeg stitching, transitions, titles, watermarks, platform exports (16:9/9:16/1:1) |
 | `model-adapters` | Per-model translation sheets: Muse, Veo, Sora, Kling, Runway, Pika, Luma, Hailuo |
 | `video-qa` | Per-shot checklists, frame evidence, continuity across joins, written verdicts |
+| `muse-google-veo-web` | End-to-end Veo via Google Flow on the web: setup, prompting, browser ops, full-duration QA, stitching |
 
 Each skill is a thin `SKILL.md` that routes into deep reference files.
-Install all eight or just the ones you need. They're self-contained and
+Install all nine or just the ones you need. They're self-contained and
 cross-link with relative paths.
 
 ## Quick start
