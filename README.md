@@ -42,7 +42,7 @@ adapter sheets that are dated and honest about going stale.
 | `muse-google-veo-web` | End-to-end Veo via Google Flow on the web: setup, prompting, browser ops, full-duration QA, stitching |
 
 Each skill is a thin `SKILL.md` that routes into deep reference files.
-Install all nine or just the ones you need — they're self-contained and
+Install all nine or just the ones you need. They're self-contained and
 cross-link with relative paths.
 
 ## Quick start
