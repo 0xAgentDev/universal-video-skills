@@ -64,6 +64,19 @@ ffmpeg -i a.mp4 -i b.mp4 -filter_complex \
   -map "[v]" ab.mp4
 ```
 
+`offset` is when the fade starts: the first clip's duration minus the
+fade duration (7.5 = 8 - 0.5 here). Note this maps video only, so
+`ab.mp4` comes out silent. If the project has audio, carry it through
+with `acrossfade` (same duration as the video fade) instead of dropping
+it, or the concat gate will fail on the audio mismatch:
+
+```bash
+ffmpeg -i a.mp4 -i b.mp4 -filter_complex \
+  "[0:v][1:v]xfade=transition=fade:duration=0.5:offset=7.5[v]; \
+   [0:a][1:a]acrossfade=d=0.5[a]" \
+  -map "[v]" -map "[a]" -c:v libx264 -pix_fmt yuv420p -c:a aac ab.mp4
+```
+
 Rules of thumb:
 
 - **Hard cuts** between shots in a sequence. Default.
