@@ -10,11 +10,35 @@ Run `ffprobe` on every clip. All clips must agree on:
 - Pixel format (`yuv420p` for compatibility)
 - Audio: sample rate and channel count, or no audio at all
 
-One odd clip poisons the concat. Transcode the odd one out first:
+One odd clip poisons the concat. Transcode the odd one out first, matching
+the project's audio standard: `concat.py` compares the audio fingerprint,
+so a silent clip and a clip with audio never join, even when the video
+matches.
+
+Project clips have audio and the odd clip's audio settings are wrong:
 
 ```bash
 ffmpeg -i odd.mp4 -c:v libx264 -pix_fmt yuv420p -r 30 -s 1920x1080 \
        -c:a aac -ar 48000 -ac 2 odd-fixed.mp4
+```
+
+Project clips are silent: strip the odd clip's audio. The command above
+will not do it for you: with no audio stream in the input, ffmpeg has
+nothing to encode, so the output stays silent-or-not exactly as it was.
+Be explicit:
+
+```bash
+ffmpeg -i odd.mp4 -c:v libx264 -pix_fmt yuv420p -r 30 -s 1920x1080 \
+       -an odd-fixed.mp4
+```
+
+Project clips have audio and the odd clip is silent: give it a silent
+track so the fingerprints agree:
+
+```bash
+ffmpeg -i odd.mp4 -f lavfi -i anullsrc=r=48000:cl=stereo \
+       -c:v libx264 -pix_fmt yuv420p -r 30 -s 1920x1080 \
+       -c:a aac -ar 48000 -ac 2 -shortest odd-fixed.mp4
 ```
 
 ## The concat
