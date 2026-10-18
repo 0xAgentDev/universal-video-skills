@@ -56,6 +56,10 @@ pass "contact_sheet"
 echo "== 6. contact_sheet.py rejects bad args =="
 out=$(python3 "$SHEET" "$TMP/master.mp4" -o "$TMP/x.jpg" --n 0 2>&1 || true)
 echo "$out" | grep -q "must be >= 1" || fail "--n 0 validation"
+out=$(python3 "$SHEET" "$TMP/master.mp4" -o "$TMP/x.jpg" --cols 0 2>&1 || true)
+echo "$out" | grep -q "must be >= 1" || fail "--cols 0 validation"
+out=$(python3 "$SHEET" "$TMP/master.mp4" -o "$TMP/x.jpg" --thumb 0 2>&1 || true)
+echo "$out" | grep -q "must be >= 1" || fail "--thumb 0 validation"
 out=$(python3 "$SHEET" "$TMP/master.mp4" -o "$TMP/x.jpg" \
   --times "abc" 2>&1 || true)
 echo "$out" | grep -q "comma-separated numbers" \
@@ -69,6 +73,10 @@ else
   out=$(python3 "$SCORE" --ref x --clips y --threshold 0.3 2>&1 || true)
   echo "$out" | grep -q "pip install" || fail "graceful dep message"
   pass "graceful dep message"
+  out=$(python3 "$SCORE" --ref x --clips y --frames 0 --threshold 0.3 \
+    2>&1 || true)
+  echo "$out" | grep -q "must be >= 1" || fail "--frames 0 validation"
+  pass "--frames validation"
 fi
 
 echo ""
