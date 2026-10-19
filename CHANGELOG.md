@@ -18,7 +18,9 @@
 - `smoke-test.sh`: the arg-validation checks now cover the new cases.
 - `package.json`: fixed the `author` field (URL sat in the email slot);
   `scripts/` is now in the published tarball so the documented smoke
-  test runs from an npm install.
+  test runs from an npm install. Invoked via `bash scripts/smoke-test.sh`
+  (CONTRIBUTING.md updated) because the exec bit does not survive npm
+  tarballs or GitHub API pushes.
 
 ## 0.1.0 (2026-10-08)
 

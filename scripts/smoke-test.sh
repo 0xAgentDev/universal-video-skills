@@ -66,17 +66,19 @@ echo "$out" | grep -q "comma-separated numbers" \
   || fail "--times validation"
 pass "arg validation"
 
-echo "== 7. identity_score.py graceful without torch =="
+echo "== 7. identity_score.py arg validation and graceful without torch =="
+# argparse validation runs before dependency loading, so the --frames
+# check holds whether or not torch is installed.
+out=$(python3 "$SCORE" --ref x --clips y --frames 0 --threshold 0.3 \
+  2>&1 || true)
+echo "$out" | grep -q "must be >= 1" || fail "--frames 0 validation"
+pass "--frames validation"
 if python3 -c "import torch" 2>/dev/null; then
   echo "SKIP: torch present (graceful path not testable here)"
 else
   out=$(python3 "$SCORE" --ref x --clips y --threshold 0.3 2>&1 || true)
   echo "$out" | grep -q "pip install" || fail "graceful dep message"
   pass "graceful dep message"
-  out=$(python3 "$SCORE" --ref x --clips y --frames 0 --threshold 0.3 \
-    2>&1 || true)
-  echo "$out" | grep -q "must be >= 1" || fail "--frames 0 validation"
-  pass "--frames validation"
 fi
 
 echo ""
